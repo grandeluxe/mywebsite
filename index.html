@@ -420,7 +420,7 @@
     <div class="container">
       <h2>Begär offert</h2>
       <p>Kontakta oss så tar vi fram en lösning för just ditt projekt.</p>
-      <form class="contact-form" id="offerForm">
+      <form class="contact-form" action="https://formsubmit.co/granfeldt@live.se" method="POST">
         <div class="form-group">
           <label for="name">Ditt namn</label>
           <input type="text" id="name" name="name" required>
@@ -434,17 +434,6 @@
           <input type="tel" id="phone" name="phone">
         </div>
         <div class="form-group">
-          <label for="service">Vilken tjänst är du intresserad av?</label>
-          <select id="service" name="service">
-            <option value="">Välj en tjänst</option>
-            <option value="elinstallation">Elinstallation</option>
-            <option value="nätverk">Nätverk</option>
-            <option value="laddlösningar">Laddlösningar</option>
-            <option value="smarta-hem">Smarta hem</option>
-            <option value="other">Annat</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label for="message">Projektbeskrivning</label>
           <textarea id="message" name="message" required></textarea>
         </div>
@@ -452,7 +441,7 @@
       </form>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -496,18 +485,10 @@
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-    // Formulär
-    const offerForm = document.getElementById('offerForm');
-    offerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(offerForm);
-      const data = Object.fromEntries(formData);
-      alert(`Tack ${data.name}! Vi hör av oss till dig på ${data.email} så snart som möjligt.`);
-      offerForm.reset();
-    });
-  </script>
+ 
 </body>
 </html>
+
 
 
 
