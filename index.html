@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trygga el- och nätverkslösningar</title>
-  <meta name="description" content="Digital Entreprenad levererar trygga och moderna el- och nätverkslösningar i Stockholm. Begär offert redan idag.">
+  <title>Digital Entreprenad AB – Tekniska installationer</title>
+  
+  <!-- Font Awesome för ikoner -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
       --primary: #a3d10c;
-      --primary-dark: #8fb90a;
-      --dark: #111111;
-      --light: #f8fafc;
+      --primary-dark: #8dbd0a;
+      --dark: #000000;
+      --light: #ffffff;
       --gray: #cccccc;
-      --white: #ffffff;
     }
 
     * {
@@ -46,17 +48,19 @@
 
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; color: var(--primary); }
+    h3 { font-size: 1.5rem; }
 
     p {
       margin-bottom: 15px;
+      color: var(--dark);
     }
 
     .btn {
       display: inline-block;
       background-color: var(--primary);
-      color: var(--white);
+      color: white;
       padding: 12px 24px;
-      border-radius: 6px;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
@@ -69,9 +73,10 @@
       transform: translateY(-2px);
     }
 
+    /* Header */
     header {
-      background-color: var(--white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: fixed;
       width: 100%;
       z-index: 100;
@@ -81,14 +86,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -114,23 +118,21 @@
     .menu-toggle {
       display: none;
       flex-direction: column;
-      justify-content: space-between;
-      width: 25px;
-      height: 18px;
       cursor: pointer;
+      gap: 5px;
     }
 
     .menu-toggle span {
       display: block;
+      width: 25px;
       height: 3px;
-      width: 100%;
       background: var(--dark);
-      border-radius: 2px;
     }
 
+    /* Hero */
     .hero {
       background: linear-gradient(135deg, #d4eb85 0%, #a3d10c 100%);
-      color: var(--white);
+      color: white;
       padding: 180px 0 100px;
       text-align: center;
     }
@@ -144,11 +146,12 @@
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 30px;
-      color: rgba(255,255,255,0.95);
+      color: rgba(255, 255, 255, 0.9);
     }
 
+    /* About */
     .about {
-      background-color: var(--white);
+      background-color: white;
     }
 
     .about-content {
@@ -157,15 +160,13 @@
       gap: 50px;
     }
 
-    .about-text {
-      flex: 1;
-    }
+    .about-text { flex: 1; }
 
     .about-image {
       flex: 1;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .about-image img {
@@ -174,9 +175,10 @@
       display: block;
     }
 
+    /* Services */
     .services {
       background-color: var(--primary);
-      color: var(--white);
+      color: white;
     }
 
     .services-grid {
@@ -187,17 +189,18 @@
     }
 
     .service-card {
-      background-color: var(--white);
+      background-color: white;
       color: var(--dark);
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
 
     .service-card h3 {
@@ -211,22 +214,47 @@
       margin-bottom: 20px;
     }
 
+    /* Contact */
     .contact {
-      background-color: var(--white);
+      background-color: white;
     }
 
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
-      background-color: var(--light);
+      background-color: #f8fafc;
       padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
     footer {
       background-color: var(--dark);
-      color: var(--white);
+      color: white;
       padding: 50px 0 20px;
     }
 
@@ -234,223 +262,4 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .footer-column {
-      flex: 1 1 250px;
-      margin-bottom: 30px;
-    }
-
-    .footer-column h3 {
-      margin-bottom: 20px;
-    }
-
-    .footer-column ul {
-      list-style: none;
-    }
-
-    .footer-column ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-column a {
-      color: var(--gray);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-column a:hover {
-      color: var(--white);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid #334155;
-      color: var(--gray);
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 0;
-        transition: left 0.3s ease;
-      }
-      .nav-links.active { left: 0; }
-      .nav-links li { margin: 15px 0; }
-      .hero { padding: 150px 0 80px; }
-      .about-content { flex-direction: column; }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">Digital Entreprenad</a>
-        <div class="menu-toggle" aria-label="Öppna meny">
-          <span></span><span></span><span></span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#home">Hem</a></li>
-          <li><a href="#about">Om oss</a></li>
-          <li><a href="#services">Tjänster</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-          <li><a href="#contact" class="btn">Begär offert</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1>Trygga el- och nätverkslösningar – från start till klart</h1>
-      <p>På Digital Entreprenad är vi en pålitlig partner i Stockholm som utför allt från anpassningar för arbetsplatser till installationer i hemmet, inklusive laddlösningar och smart teknik.</p>
-      <a href="#contact" class="btn">Begär offert</a>
-    </div>
-  </section>
-
-  <!-- Om oss -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>Om Digital Entreprenad</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Digital Entreprenad startades 2012 av Stefan Alenius. Sedan 2021 driver hans son Viktor företaget vidare.</p>
-          <p>Med erfarenhet och nya idéer levererar vi el- och nätverkstjänster av hög kvalitet i Stockholm.</p>
-        </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Vårt team arbetar" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tjänster -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Våra tjänster</h2>
-      <p>Vi erbjuder helhetslösningar inom el och nätverk för både företag och privatpersoner.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon">⚡</div>
-          <h3>Elinstallation</h3>
-          <p>Säkra och hållbara installationer för hem och arbetsplatser.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">🌐</div>
-          <h3>Nätverk</h3>
-          <p>Pålitliga nätverkslösningar anpassade för framtidens behov.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontakt -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Begär offert</h2>
-      <p>Kontakta oss för att diskutera ditt projekt och få en offert.</p>
-      <form class="contact-form" id="offerForm">
-        <div class="form-group">
-          <label for="name">Namn</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E-postadress</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefonnummer</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-          <label for="service">Tjänst</label>
-          <select id="service" name="service">
-            <option value="">Välj en tjänst</option>
-            <option value="elinstallation">Elinstallation</option>
-            <option value="nätverk">Nätverk</option>
-            <option value="laddlösningar">Laddlösningar</option>
-            <option value="smarta-hem">Smarta hem</option>
-            <option value="övrigt">Övrigt</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Projektbeskrivning</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn">Skicka förfrågan</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>Digital Entreprenad</h3>
-          <p>Innovativa lösningar inom el och nätverk.</p>
-        </div>
-        <div class="footer-column">
-          <h3>Snabblänkar</h3>
-          <ul>
-            <li><a href="#home">Hem</a></li>
-            <li><a href="#about">Om oss</a></li>
-            <li><a href="#services">Tjänster</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Kontakta oss</h3>
-          <ul>
-            <li>E-post: info@digitalentreprenad.com</li>
-            <li>Telefon: +46 (0)70 123 45 67</li>
-            <li>Adress: Företagsgatan 12, Stockholm</li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2025 Digital Entreprenad. Alla rättigheter förbehålls.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobilmeny
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
-    // Formulär
-    const offerForm = document.getElementById('offerForm');
-    offerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(offerForm);
-      const data = Object.fromEntries(formData);
-      alert(`Tack för din förfrågan, ${data.name}! Vi hör av oss till ${data.email} inom kort.`);
-      offerForm.reset();
-    });
-  </script>
-</body>
-</html>
+      flex-wrap: wra
