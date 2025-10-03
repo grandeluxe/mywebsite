@@ -262,4 +262,227 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 40px;
-      flex-wrap: wra
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      padding: 0 20px;
+      min-width: 250px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover { color: white; }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #334155;
+      color: var(--gray);
+    }
+
+    /* Responsivt */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+
+      .menu-toggle { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: left 0.3s ease;
+      }
+
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 15px 0; }
+
+      .about-content { flex-direction: column; }
+      .footer-content { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          <img src="bild.jpg" alt="Digital Entreprenad AB logotyp" class="logo-img">
+        </a>
+        <div class="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Hem</a></li>
+          <li><a href="#about">Om oss</a></li>
+          <li><a href="#services">Tjänster</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Trygga el- och nätverkslösningar – från start till klart</h1>
+      <p>På Digital Entreprenad är vi en pålitlig partner i Stockholm som utför allt från anpassningar för arbetsplatser till installationer i hemmet, inklusive moderna laddlösningar och smart teknik.</p>
+      <a href="#contact" class="btn">Begär offert</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Om Digital Entreprenad</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Digital Entreprenad startades 2012 av Stefan Alenius. Sedan 2021 driver hans son Viktor Alenius företaget vidare.</p>
+          <p>Med en kombination av erfarenhet och nya idéer fortsätter vi att leverera el- och nätverkstjänster av hög kvalitet i Stockholm.</p>   
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Vårt team arbetar" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Våra tjänster</h2>
+      <p>Vi erbjuder moderna installationer för hem och företag.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Elinstallation</h3>
+          <p>Säkra och hållbara installationer för både hem och arbetsplatser.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Nätverkslösningar</h3>
+          <p>Pålitliga och framtidssäkra nätverk anpassade efter dina behov.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Begär offert</h2>
+      <p>Kontakta oss så tar vi fram en lösning för just ditt projekt.</p>
+      <form class="contact-form" id="offerForm">
+        <div class="form-group">
+          <label for="name">Ditt namn</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-postadress</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefonnummer</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="service">Vilken tjänst är du intresserad av?</label>
+          <select id="service" name="service">
+            <option value="">Välj en tjänst</option>
+            <option value="elinstallation">Elinstallation</option>
+            <option value="nätverk">Nätverk</option>
+            <option value="laddlösningar">Laddlösningar</option>
+            <option value="smarta-hem">Smarta hem</option>
+            <option value="other">Annat</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Projektbeskrivning</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Skicka förfrågan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Digital Entreprenad AB</h3>
+          <p>Tekniska installationer inom el och nätverk.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Snabblänkar</h3>
+          <ul>
+            <li><a href="#home">Hem</a></li>
+            <li><a href="#about">Om oss</a></li>
+            <li><a href="#services">Tjänster</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Kontakt</h3>
+          <ul>
+            <li>E-post: info@digitalentreprenad.com</li>
+            <li>Telefon: +46 (0)70-123 45 67</li>
+            <li>Adress: Stockholm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Digital Entreprenad AB. Alla rättigheter förbehållna.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobil meny
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // Formulär
+    const offerForm = document.getElementById('offerForm');
+    offerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(offerForm);
+      const data = Object.fromEntries(formData);
+      alert(`Tack ${data.name}! Vi hör av oss till dig på ${data.email} så snart som möjligt.`);
+      offerForm.reset();
+    });
+  </script>
+</body>
+</html>
